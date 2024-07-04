@@ -7,7 +7,7 @@
     </div>
     <div class="container overflow-auto" style="display: flex; flex-wrap: nowrap; overflow-x: auto;">
         <!-- John Doe -->
-        <div class="card" style="width: 18rem; margin-right: 15px;">
+        <div class="card" style="width: 18rem; margin-right: 15px; min-width: 14rem;">
             <img src="/john_doe.jpg" class="card-img-top rounded" alt="..." style="height: 150px;">
             <div class="card-body">
                 <div class="card-title">
@@ -21,7 +21,7 @@
         </div>
 
         <!-- Jane Smith -->
-        <div class="card" style="width: 18rem; margin-right: 15px;">
+        <div class="card" style="width: 18rem; margin-right: 15px;  min-width: 14rem;">
             <img src="/jane_smith.jpg" class="card-img-top rounded" alt="..." style="height: 150px;">
             <div class="card-body">
                 <div class="card-title">
@@ -35,7 +35,7 @@
         </div>
 
         <!-- Michael Brown -->
-        <div class="card" style="width: 18rem; margin-right: 15px;">
+        <div class="card" style="width: 18rem; margin-right: 15px; min-width: 14rem;">
             <img src="/michael_brown.jpg" class="card-img-top rounded" alt="..." style="height: 150px;">
             <div class="card-body">
                 <div class="card-title">
@@ -49,7 +49,7 @@
         </div>
 
         <!-- Sarah Lee -->
-        <div class="card" style="width: 18rem; margin-right: 15px;">
+        <div class="card" style="width: 18rem; margin-right: 15px; min-width: 14rem;">
             <img src="/sarah_lee.jpg" class="card-img-top rounded" alt="..." style="height: 150px;">
             <div class="card-body">
                 <div class="card-title">
@@ -63,7 +63,7 @@
         </div>
 
         <!-- David Wong -->
-        <div class="card" style="width: 18rem; margin-right: 15px;">
+        <div class="card" style="width: 18rem; margin-right: 15px; min-width: 14rem;">
             <img src="/david_wong.jpg" class="card-img-top rounded" alt="..." style="height: 150px;">
             <div class="card-body">
                 <div class="card-title">
