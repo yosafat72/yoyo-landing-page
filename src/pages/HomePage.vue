@@ -13,8 +13,9 @@
             </h4>
             <h4 id="services">Third heading</h4>
             <p>...</p>
-            <h4 id="testimonials">Fourth heading</h4>
-            <p>...</p>
+            <h4 id="testimonials">
+                <TestimonialComponent></TestimonialComponent>
+            </h4>
             <h4 id="contact">Fifth heading</h4>
             <p>...</p>
         </div>
@@ -26,5 +27,6 @@
 import NavbarComponent from '../components/NavbarComponent.vue';
 import ImageSliderComponent from '../components/ImageSliderComponent.vue';
 import AboutComponent from '../components/AboutComponent.vue';
+import TestimonialComponent from '../components/TestimonialComponent.vue';
 
 </script>
