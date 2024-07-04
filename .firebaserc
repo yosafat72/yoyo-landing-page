@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "yoyo-pajak"
+  },
+  "targets": {
+    "rid1-test": {
+      "hosting": {
+        "dev": [
+          "rid1-test-development"
+        ],
+        "prod": [
+          "rid1-test-production"
+        ]
+      }
+    }
+  }
+}
