@@ -2,9 +2,14 @@ import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
 
+// Bootstrap
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap"
+
 //Firebase
 import firebase from 'firebase/compat/app'
 import 'firebase/compat/analytics'
+import router from './routes/router'
 
 const firebaseConfig = {
   apiKey: "AIzaSyAYNSKCy--VoY4-9ABHd4vj0a2PEFILKCg",
@@ -20,4 +25,6 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig)
 firebase.analytics()
 
-createApp(App).mount('#app')
+const app = createApp(App)
+app.use(router)
+app.mount('#app')
