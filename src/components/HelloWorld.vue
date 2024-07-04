@@ -12,8 +12,7 @@ const count = ref(0)
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
     <p>
-      Edit
-      <code>components/HelloWorld.vue</code> aefgehafeagit
+      Apiang asu
     </p>
   </div>
 
