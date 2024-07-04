@@ -5,6 +5,10 @@ on:
     tags:
       - "prod_version*"
       - "dev_version*"
+  pull_request:
+    branches:
+      - main
+      - development
 
 jobs:
   deploy:
@@ -35,3 +39,7 @@ jobs:
         uses: actions/upload-artifact@main
         with:
           path: build
+
+      - name: Handle pull request
+        if: github.event_name == 'pull_request'
+        run: echo "Pull request detected for branch ${{ github.ref }}"
