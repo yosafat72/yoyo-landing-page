@@ -4,6 +4,9 @@ import { ref } from 'vue'
 defineProps<{ msg: string }>()
 
 const count = ref(0)
+
+console.log('Hello World')
+console.log(process.env.VUE_APP_API_KEY)
 </script>
 
 <template>
