@@ -1,95 +1,106 @@
 <template>
   <div class="container">
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-      <div class="col">
+      <div class="col" v-for="(service, index) in services" :key="index">
         <div class="card text-center elementor-widget-wrap h-100">
-          <div class="card-body">
-            <i class="far fa-window-restore fa-3x mb-3"></i>
-            <h5 class="card-title">LAYANAN</h5>
-            <p class="card-text">Our company provides the following</p>
+          <!-- Header -->
+          <div class="card-header">
+            <i :class="service.iconClass + ' fa-3x mb-3'"></i>
+            <h5 class="card-title">{{ service.title }}</h5>
           </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card text-center elementor-widget-wrap h-100">
+          <!-- Body -->
           <div class="card-body">
-            <i class="far fa-id-badge fa-3x mb-3"></i>
-            <h5 class="card-title">JASA KEPATUHAN PAJAK</h5>
+            <p class="card-text">{{ service.description }}</p>
             <ul class="list-unstyled">
-              <li><i class="fas fa-dot-circle"></i> Konsultan Pajak</li>
-              <li><i class="fas fa-dot-circle"></i> Kepatuhan Pajak Bulanan</li>
-              <li><i class="fas fa-dot-circle"></i> Kepatuhan Pajak Tahunan</li>
+              <li v-for="(item, i) in service.details" :key="i">
+                <i class="fas fa-dot-circle"></i> {{ item }}
+              </li>
             </ul>
-            <a href="/tax-compliance-service/" class="btn btn-primary">BACA SELENGKAPNYA</a>
           </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card text-center elementor-widget-wrap h-100">
-          <div class="card-body">
-            <i class="far fa-newspaper fa-3x mb-3"></i>
-            <h5 class="card-title">LITIGASI PAJAK</h5>
-            <ul class="list-unstyled">
-              <li><i class="fas fa-dot-circle"></i> Audit Pajak</li>
-              <li><i class="fas fa-dot-circle"></i> Keberatan Pajak</li>
-              <li><i class="fas fa-dot-circle"></i> Banding Pajak</li>
-              <li><i class="fas fa-dot-circle"></i> Gugatan Pajak</li>
-              <li><i class="fas fa-dot-circle"></i> Pengembalian Pajak</li>
-            </ul>
-            <a href="/tax-litigation-service/" class="btn btn-primary">BACA SELENGKAPNYA</a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card text-center elementor-widget-wrap h-100">
-          <div class="card-body">
-            <i class="far fa-chart-bar fa-3x mb-3"></i>
-            <h5 class="card-title">PELAYANAN STRATEGIS MANAJEMEN PERPAJAKAN</h5>
-            <ul class="list-unstyled">
-              <li><i class="fas fa-dot-circle"></i> Review Diagnostik Pajak</li>
-              <li><i class="fas fa-dot-circle"></i> Uji Tuntas Pajak</li>
-              <li><i class="fas fa-dot-circle"></i> Restrukturisasi Pajak</li>
-              <li><i class="fas fa-dot-circle"></i> Layanan Penasihat Pajak</li>
-            </ul>
-            <a href="/tax-management-strategic-service/" class="btn btn-primary">BACA SELENGKAPNYA</a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card text-center elementor-widget-wrap h-100">
-          <div class="card-body">
-            <i class="far fa-folder-open fa-3x mb-3"></i>
-            <h5 class="card-title">DOKUMENTASI PAJAK</h5>
-            <ul class="list-unstyled">
-              <li><i class="fas fa-dot-circle"></i> Dokumentasi Harga Transfer</li>
-              <li><i class="fas fa-dot-circle"></i> Pendaftaran Dan Pengusaha PPN Deregistrasi</li>
-              <li><i class="fas fa-dot-circle"></i> Layanan NPWP Tidak Efektif</li>
-            </ul>
-            <a href="/tax-documentation/" class="btn btn-primary">BACA SELENGKAPNYA</a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card text-center elementor-widget-wrap h-100">
-          <div class="card-body">
-            <i class="far fa-keyboard fa-3x mb-3"></i>
-            <h5 class="card-title">LAYANAN PAJAK LAINNYA</h5>
-            <ul class="list-unstyled">
-              <li><i class="fas fa-dot-circle"></i> Payroll</li>
-              <li><i class="fas fa-dot-circle"></i> Pembukuan</li>
-              <li><i class="fas fa-dot-circle"></i> Pelatihan Pajak</li>
-            </ul>
-            <a href="/other-tax-service/" class="btn btn-primary">BACA SELENGKAPNYA</a>
+          <!-- Footer -->
+          <div class="card-footer">
+            <a :href="service.link" class="btn btn-primary">BACA SELENGKAPNYA</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 </template>
-  
+
 <script>
 export default {
   name: "Services",
+  data() {
+    return {
+      services: [
+        {
+          iconClass: "far fa-window-restore",
+          title: "LAYANAN",
+          description: "Our company provides the following",
+          details: [],
+          link: "/service/",
+        },
+        {
+          iconClass: "far fa-id-badge",
+          title: "JASA KEPATUHAN PAJAK",
+          description: "Konsultan Pajak, Kepatuhan Pajak Bulanan, Kepatuhan Pajak Tahunan",
+          details: [
+            "Konsultan Pajak",
+            "Kepatuhan Pajak Bulanan",
+            "Kepatuhan Pajak Tahunan",
+          ],
+          link: "/tax-compliance-service/",
+        },
+        {
+          iconClass: "far fa-newspaper",
+          title: "LITIGASI PAJAK",
+          description: "Audit Pajak, Keberatan Pajak, Banding Pajak, Gugatan Pajak, Pengembalian Pajak",
+          details: [
+            "Audit Pajak",
+            "Keberatan Pajak",
+            "Banding Pajak",
+            "Gugatan Pajak",
+            "Pengembalian Pajak",
+          ],
+          link: "/tax-litigation-service/",
+        },
+        {
+          iconClass: "far fa-chart-bar",
+          title: "PELAYANAN STRATEGIS MANAJEMEN PERPAJAKAN",
+          description: "Review Diagnostik Pajak, Uji Tuntas Pajak, Restrukturisasi Pajak, Layanan Penasihat Pajak",
+          details: [
+            "Review Diagnostik Pajak",
+            "Uji Tuntas Pajak",
+            "Restrukturisasi Pajak",
+            "Layanan Penasihat Pajak",
+          ],
+          link: "/tax-management-strategic-service/",
+        },
+        {
+          iconClass: "far fa-folder-open",
+          title: "DOKUMENTASI PAJAK",
+          description: "Dokumentasi Harga Transfer, Pendaftaran Dan Pengusaha PPN Deregistrasi, Layanan NPWP Tidak Efektif",
+          details: [
+            "Dokumentasi Harga Transfer",
+            "Pendaftaran Dan Pengusaha PPN Deregistrasi",
+            "Layanan NPWP Tidak Efektif",
+          ],
+          link: "/tax-documentation/",
+        },
+        {
+          iconClass: "far fa-keyboard",
+          title: "LAYANAN PAJAK LAINNYA",
+          description: "Payroll, Pembukuan, Pelatihan Pajak",
+          details: [
+            "Payroll",
+            "Pembukuan",
+            "Pelatihan Pajak",
+          ],
+          link: "/other-tax-service/",
+        },
+      ],
+    };
+  },
 };
 </script>
 
@@ -107,6 +118,12 @@ export default {
   justify-content: space-between;
 }
 
+.card-header {
+  padding: 20px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
 .card-body {
   padding: 30px;
 }
@@ -120,7 +137,7 @@ export default {
 }
 
 .elementor-widget-wrap {
-  background-color: rgba(64, 84, 178, 0.9); /* Warna dengan opasitas 0.9 */
+  background-color: rgba(64, 84, 178, 0.9);
   padding: 20px;
   border-radius: 10px;
   transition: transform 0.5s ease, box-shadow 0.5s ease;
