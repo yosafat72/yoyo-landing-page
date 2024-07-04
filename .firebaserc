@@ -6,7 +6,7 @@
     "yoyo-pajak": {
       "hosting": {
         "dev": [
-          "rid1-test-development"
+          "yoyo-pajak-development"
         ],
         "prod": [
           "yoyo-pajak"
