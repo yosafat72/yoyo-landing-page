@@ -1,7 +1,7 @@
 name: Firebase hosting
 
 on:
-  push:
+  create:
     tags:
       - "prod_version*"
       - "dev_version*"
@@ -24,11 +24,11 @@ jobs:
           yarn build
 
       - name: Deploy to staging site
-        if: startsWith(github.ref, 'refs/tags/dev_version')
+        if: github.ref == 'refs/heads/development' && startsWith(github.ref, 'refs/tags/dev_version')
         run: firebase deploy --only hosting:dev --non-interactive --token ${{secrets.FIREBASE_TOKEN}} -m "RunID ${{ github.run_id }} Commit SHA ${{ github.sha }}"
 
       - name: Deploy to production site
-        if: startsWith(github.ref, 'refs/tags/prod_version')
+        if: github.ref == 'refs/heads/main' && startsWith(github.ref, 'refs/tags/prod_version')
         run: firebase deploy --only hosting:prod --non-interactive --token ${{secrets.FIREBASE_TOKEN}} -m "RunID ${{ github.run_id }} Commit SHA ${{ github.sha }}"
 
       - name: Archive build Artifact
