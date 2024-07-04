@@ -24,18 +24,14 @@ jobs:
           yarn build
 
       - name: Deploy to staging site
-        if: github.ref == 'refs/heads/development'
+        if: github.event.pull_request.base.ref == 'development'
         run: firebase deploy --only hosting:dev --non-interactive --token ${{secrets.FIREBASE_TOKEN}} -m "RunID ${{ github.run_id }} Commit SHA ${{ github.sha }}"
 
       - name: Deploy to production site
-        if: github.ref == 'refs/heads/main'
+        if: github.event.pull_request.base.ref == 'main'
         run: firebase deploy --only hosting:prod --non-interactive --token ${{secrets.FIREBASE_TOKEN}} -m "RunID ${{ github.run_id }} Commit SHA ${{ github.sha }}"
 
       - name: Archive build Artifact
         uses: actions/upload-artifact@main
         with:
           path: build
-
-      - name: Handle pull request
-        if: github.event_name == 'pull_request'
-        run: echo "Pull request detected for branch ${{ github.ref }}"
