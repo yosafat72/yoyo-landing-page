@@ -3,7 +3,7 @@
     "default": "yoyo-pajak"
   },
   "targets": {
-    "rid1-test": {
+    "yoyo-pajak": {
       "hosting": {
         "dev": [
           "rid1-test-development"
