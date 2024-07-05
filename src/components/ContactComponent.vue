@@ -44,6 +44,11 @@
             </p>
         </div> -->
     </div>
+    <div class="row">
+        <div class="col-md-12 d-flex align-items-center justify-content-center">
+            <span class="text-muted" style="font-size: 12px;">"© 2024 Kantor Konsultan Pajak Yoyo Lukasa. All rights reserved.</span>
+        </div>
+    </div>
 </template>
 
 <script setup lang="ts">
