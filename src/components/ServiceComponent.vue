@@ -1,25 +1,89 @@
 <template>
+  <div class="container d-flex align-items-center justify-content-center">
+      <div class="text-center">
+          <h3 class="fw-bold" style="color: black;">Comprehensive Tax Solutions</h3>
+          <p class="lead">Tailored Expertise for Your Unique Needs</p>
+      </div>
+  </div>
   <div class="container">
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-      <div class="col" v-for="(service, index) in services" :key="index">
-        <div class="card text-center elementor-widget-wrap h-100">
-          <!-- Header -->
-          <div class="card-header">
-            <i :class="service.iconClass + ' fa-3x mb-3'"></i>
-            <h5 class="card-title">{{ service.title }}</h5>
-          </div>
-          <!-- Body -->
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="card p-1" style="width: 16rem; min-width: 14rem; height: 100%;">
+          <img src="/img_tax_planning.jpg" class="card-img-top rounded" alt="..." style="height: 175px;">
           <div class="card-body">
-            <p class="card-text">{{ service.description }}</p>
-            <ul class="list-unstyled">
-              <li v-for="(item, i) in service.details" :key="i">
-                <i class="fas fa-dot-circle"></i> {{ item }}
-              </li>
-            </ul>
+              <div class="card-title">
+                  <div class="fw-bold" style="font-size: 14px;">Tax Planning and Compliance</div>
+              </div>
+              <div class="card-text fw-light" style="font-size: 12px;">
+                  Comprehensive tax planning and compliance services tailored to meet your unique needs.
+              </div>
+              <div class="card-text fw-light">
+                  <router-link to="/tax-planning" class="text-decoration-none fw-medium" style="font-size: 14px; color: #E5E483;"><u>Learn More</u></router-link>
+              </div>
           </div>
-          <!-- Footer -->
-          <div class="card-footer">
-            <a :href="service.link" class="btn btn-primary">BACA SELENGKAPNYA</a>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card p-1" style="width: 16rem; min-width: 14rem; height: 100%;">
+          <img src="/img_business_tax.jpg" class="card-img-top rounded" alt="..." style="height: 175px;">
+          <div class="card-body">
+              <div class="card-title">
+                  <div class="fw-bold" style="font-size: 14px;">Business Tax Services</div>
+              </div>
+              <div class="card-text fw-light" style="font-size: 12px;">
+                  Specialized tax solutions for businesses of all sizes, aimed at minimizing tax liabilities and maximizing profitability.
+              </div>
+              <div class="card-text fw-light">
+                  <router-link to="/tax-planning" class="text-decoration-none fw-medium" style="font-size: 14px; color: #E5E483;"><u>Learn More</u></router-link>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card p-1" style="width: 16rem; min-width: 14rem; height: 100%;">
+          <img src="/img_individual_tax.jpg" class="card-img-top rounded" alt="..." style="height: 175px;">
+          <div class="card-body">
+              <div class="card-title">
+                  <div class="fw-bold" style="font-size: 14px;">Individual Tax Services</div>
+              </div>
+              <div class="card-text fw-light" style="font-size: 12px;">
+                  Personalized tax consulting for individuals, ensuring accurate and timely tax filings.
+              </div>
+              <div class="card-text fw-light">
+                  <router-link to="/tax-planning" class="text-decoration-none fw-medium" style="font-size: 14px; color: #E5E483;"><u>Learn More</u></router-link>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card p-1" style="width: 16rem; min-width: 14rem; height: 100%;">
+          <img src="/img_audit_support.jpg" class="card-img-top rounded" alt="..." style="height: 175px;">
+          <div class="card-body">
+              <div class="card-title">
+                  <div class="fw-bold" style="font-size: 14px;">Audit Support</div>
+              </div>
+              <div class="card-text fw-light" style="font-size: 12px;">
+                  Expert assistance in preparing for and navigating tax audits, reducing stress and potential liabilities.
+              </div>
+              <div class="card-text fw-light">
+                  <router-link to="/tax-planning" class="text-decoration-none fw-medium" style="font-size: 14px; color: #E5E483;"><u>Learn More</u></router-link>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card p-1" style="width: 16rem; min-width: 14rem; height: 100%;">
+          <img src="/img_consulting.jpg" class="card-img-top rounded" alt="..." style="height: 175px;">
+          <div class="card-body">
+              <div class="card-title">
+                  <div class="fw-bold" style="font-size: 14px;">Consulting and Advisory</div>
+              </div>
+              <div class="card-text fw-light" style="font-size: 12px;">
+                  Strategic advice on tax implications of financial decisions, helping you make informed choices.
+              </div>
+              <div class="card-text fw-light">
+                  <router-link to="/tax-planning" class="text-decoration-none fw-medium" style="font-size: 14px; color: #E5E483;"><u>Learn More</u></router-link>
+              </div>
           </div>
         </div>
       </div>
@@ -28,83 +92,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-
-interface Service {
-  iconClass: string;
-  title: string;
-  description: string;
-  details: string[];
-  link: string;
-}
-
-const services = ref<Service[]>([
-  {
-    iconClass: "far fa-window-restore",
-    title: "LAYANAN",
-    description: "Our company provides the following",
-    details: [],
-    link: "/service/",
-  },
-  {
-    iconClass: "far fa-id-badge",
-    title: "JASA KEPATUHAN PAJAK",
-    description: "Konsultan Pajak, Kepatuhan Pajak Bulanan, Kepatuhan Pajak Tahunan",
-    details: [
-      "Konsultan Pajak",
-      "Kepatuhan Pajak Bulanan",
-      "Kepatuhan Pajak Tahunan",
-    ],
-    link: "/tax-compliance-service/",
-  },
-  {
-    iconClass: "far fa-newspaper",
-    title: "LITIGASI PAJAK",
-    description: "Audit Pajak, Keberatan Pajak, Banding Pajak, Gugatan Pajak, Pengembalian Pajak",
-    details: [
-      "Audit Pajak",
-      "Keberatan Pajak",
-      "Banding Pajak",
-      "Gugatan Pajak",
-      "Pengembalian Pajak",
-    ],
-    link: "/tax-litigation-service/",
-  },
-  {
-    iconClass: "far fa-chart-bar",
-    title: "PELAYANAN STRATEGIS MANAJEMEN PERPAJAKAN",
-    description: "Review Diagnostik Pajak, Uji Tuntas Pajak, Restrukturisasi Pajak, Layanan Penasihat Pajak",
-    details: [
-      "Review Diagnostik Pajak",
-      "Uji Tuntas Pajak",
-      "Restrukturisasi Pajak",
-      "Layanan Penasihat Pajak",
-    ],
-    link: "/tax-management-strategic-service/",
-  },
-  {
-    iconClass: "far fa-folder-open",
-    title: "DOKUMENTASI PAJAK",
-    description: "Dokumentasi Harga Transfer, Pendaftaran Dan Pengusaha PPN Deregistrasi, Layanan NPWP Tidak Efektif",
-    details: [
-      "Dokumentasi Harga Transfer",
-      "Pendaftaran Dan Pengusaha PPN Deregistrasi",
-      "Layanan NPWP Tidak Efektif",
-    ],
-    link: "/tax-documentation/",
-  },
-  {
-    iconClass: "far fa-keyboard",
-    title: "LAYANAN PAJAK LAINNYA",
-    description: "Payroll, Pembukuan, Pelatihan Pajak",
-    details: [
-      "Payroll",
-      "Pembukuan",
-      "Pelatihan Pajak",
-    ],
-    link: "/other-tax-service/",
-  },
-]);
 </script>
 
 <style scoped>

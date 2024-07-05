@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex flex-column bg-highlight mb-3">
+  <div class="d-flex flex-column bg-highlight mb-3" style="background-color: #faf4e4;">
     <div class="bd-highlight">
       <NavbarComponent></NavbarComponent>
     </div>
@@ -11,34 +11,33 @@
           <h4 id="about">
             <AboutComponent></AboutComponent>
           </h4>
-          <h4 id="services" :style="backgroundImageStyle">
+          <h4 id="services" class="bg-service-component">
             <ServiceComponent></ServiceComponent>
           </h4>
           <p>...</p>
           <h4 id="testimonials">
             <TestimonialComponent></TestimonialComponent>
           </h4>
-          <p>...</p>
-          <h4 id="contact">Fifth heading</h4>
-          <p>...</p>
+          <h4 id="contact" class="bg-service-component">
+            <ContactComponent></ContactComponent>
+          </h4>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
 import NavbarComponent from '../components/NavbarComponent.vue';
 import ImageSliderComponent from '../components/ImageSliderComponent.vue';
 import AboutComponent from '../components/AboutComponent.vue';
 import ServiceComponent from '../components/ServiceComponent.vue';
 import TestimonialComponent from '../components/TestimonialComponent.vue';
+import ContactComponent from '../components/ContactComponent.vue';
 
-const backgroundImageStyle = computed(() => ({
-backgroundImage: `url('/h4_background2.jpg')`,
-backgroundSize: 'cover',
-backgroundPosition: 'center',
-height: 'auto',
-}));
 </script>
 
+<style scoped>
+  .bg-service-component {
+    background-color: #fef9f3;
+  }
+</style>
