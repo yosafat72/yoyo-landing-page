@@ -18,9 +18,9 @@
           <h4 id="testimonials">
             <TestimonialComponent></TestimonialComponent>
           </h4>
-          <p>...</p>
-          <h4 id="contact">Fifth heading</h4>
-          <p>...</p>
+          <h4 id="contact" class="bg-service-component">
+            <ContactComponent></ContactComponent>
+          </h4>
       </div>
     </div>
   </div>
@@ -32,6 +32,7 @@ import ImageSliderComponent from '../components/ImageSliderComponent.vue';
 import AboutComponent from '../components/AboutComponent.vue';
 import ServiceComponent from '../components/ServiceComponent.vue';
 import TestimonialComponent from '../components/TestimonialComponent.vue';
+import ContactComponent from '../components/ContactComponent.vue';
 
 </script>
 
