@@ -58,6 +58,18 @@
         </div>
       </div>
     </div>
+
+    <div class="container d-flex align-items-center justify-content-center mt-5">
+      <div class="text-center mb-5">
+        <h3 class="fw-bold" style="color: black;">Colaboration With</h3>
+        <p class="lead">
+          YL Consultant collaborates with several companies, for example with:
+        </p>
+        <div>
+          <img src="/FKI.jpeg" class="img-fluid rounded" alt="Why Choose Us">
+        </div>
+      </div>
+    </div>
   </template>
   
   <script setup lang="ts">

@@ -13,9 +13,6 @@
             Financial Profession Development Center<br>
             Secretariat General of the Ministry of Finance<br>
             WA Center PPPK: 08158826288<br>
-            Phone: 134<br>
-            Email: <a href="mailto:Kemenkeu.prime@kemenkeu.go.id">Kemenkeu.prime@kemenkeu.go.id</a><br>
-            Website: <a href="http://pppk.kemenkeu.go.id" target="_blank">pppk.kemenkeu.go.id</a>
           </address>
         </div>
         <div class="col-md-5 col-sm-6 col-xs-12 footer-block feedback mb-4">
@@ -24,10 +21,6 @@
             Criticism and suggestions related to services can be submitted via:
             <ul>
               <li>WA Center PPPK: 08158826288</li>
-              <li>Phone: 021-3843237</li>
-              <li>Fax: 021-3508573</li>
-              <li>Service complaints: email to <a href="mailto:Kemenkeu.prime@kemenkeu.go.id">Kemenkeu.prime@kemenkeu.go.id</a></li>
-              <li>Non-service complaints: <a href="http://wise.kemenkeu.go.id" target="_blank">wise.kemenkeu.go.id</a> or <a href="http://lapor.go.id" target="_blank">lapor.go.id</a></li>
               <li>Mail: KKP Yoyo Lukasa Rukan Teuku Umar Blok D12-15, RT.004/RW.005, Karawaci, Kec. Karawaci, Kota Tangerang, Banten 15115, Indonesia </li>
             </ul>
           </address>
@@ -53,10 +46,18 @@
   }
 }
 
+@keyframes textGlow {
+  0% {
+    text-shadow: 0 0 2px #faf4e3, 0 0 5px #dbc486, 0 0 10px #faf4e3, 0 0 15px #faf4e3, 0 0 20px #faf4e3, 0 0 25px #85713a, 0 0 30px #faf4e3;
+  }
+  100% {
+    text-shadow: 0 0 2px #e8d8c0, 0 0 5px #af8f5e, 0 0 10px #e8d8c0, 0 0 15px #e8d8c0, 0 0 20px #e8d8c0, 0 0 25px #e8d8c0, 0 0 30px #e8d8c0;
+  }
+}
+
 .page-prefooter {
-  background-color: #fef9f3;
   padding: 40px 0;
-  border-top: 1px solid #dee2e6;
+  background-color: #000; /* Ensure contrast with black background */
 }
 
 .footer-block {
@@ -64,22 +65,22 @@
   margin-bottom: 20px; /* Adjusting margin to provide spacing */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(135deg, #8d7557, #e8e5e3); /* Gradient background */
+  background: linear-gradient(135deg, #ffffff, #f0f0f0); /* Gradient background */
   opacity: 0;
   animation: fadeInUp 1s ease forwards;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about-us {
-  background: linear-gradient(135deg, #fef9f3, #fcdac5); /* Gradient for About Us */
+  background: linear-gradient(135deg, #ffffff, #f8f9fa); /* Light gradient for About Us */
 }
 
 .contact {
-  background: linear-gradient(135deg, #fef9f3, #e7d4c0); /* Gradient for Contact */
+  background: linear-gradient(135deg, #ffffff, #e9ecef); /* Light gradient for Contact */
 }
 
 .feedback {
-  background: linear-gradient(135deg, #fef9f3, #f2e4d9); /* Gradient for Feedback */
+  background: linear-gradient(135deg, #ffffff, #f2f4f7); /* Light gradient for Feedback */
 }
 
 .footer-block:hover {
@@ -90,18 +91,19 @@
 .footer-block h2 {
   font-weight: bold;
   margin-bottom: 15px;
-  color: #343a40;
+  color: black; /* Bright color for headers */
   font-size: 1.25rem;
+  animation: textGlow 1.5s ease-in-out infinite; /* Glowing effect for headers */
 }
 
 .footer-block p, .footer-block address, .footer-block ul {
-  color: #6c757d;
+  color: #333; /* Darker text color for better contrast */
   margin-bottom: 15px;
   font-size: 0.875rem;
 }
 
 .footer-block a {
-  color: #007bff;
+  color: #007bff; /* Link color for visibility */
   text-decoration: none;
 }
 
@@ -123,7 +125,7 @@
 }
 
 .footer-block ul li a {
-  color: #007bff;
+  color: #007bff; /* Link color for visibility */
   text-decoration: none;
 }
 
