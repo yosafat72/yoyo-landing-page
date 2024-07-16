@@ -6,9 +6,10 @@
     </div>
     <div class="container">
       <div class="row g-4 justify-content-center">
-        <div v-for="service in services" :key="service.title" class="col-md-3 animate">
-          <div class="card p-1" style="width: 16rem; min-width: 14rem; height: 100%;">
-            <img :src="service.image" class="card-img-top rounded" alt="..." style="height: 175px;">
+        <!-- v-for loop to generate the service cards -->
+        <div v-for="service in services" :key="service.title" class="col-md-4 col-lg-4 d-flex justify-content-center animate">
+          <div class="card p-3" style="width: 16rem; min-width: 14rem; height: 100%;">
+            <img :src="service.image" class="card-img-top rounded" alt="..." style="height: 175px; object-fit: cover;">
             <div class="card-body">
               <div class="card-title">
                 <div class="fw-bold" style="font-size: 14px;">{{ service.title }}</div>
@@ -107,14 +108,8 @@ useHead({
   justify-content: space-between;
 }
 
-.card-header {
-  padding: 20px;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-}
-
 .card-body {
-  padding: 30px;
+  padding: 20px; /* Adjust padding for better spacing */
 }
 
 .card-body i {
@@ -157,6 +152,10 @@ useHead({
 @media (max-width: 992px) {
   .row-cols-md-2 {
     flex-direction: column;
+  }
+
+  .card {
+    margin: auto; /* Centering cards horizontally */
   }
 }
 

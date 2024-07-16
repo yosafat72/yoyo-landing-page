@@ -1,31 +1,16 @@
 <template>
   <div class="container d-flex flex-column align-items-center mt-5">
     <div class="text-center mb-5">
-      <h1 class="fw-bold text-dark">Yoyo Lukasa S.E., BKP</h1>
-      <p class="lead">
-        Is a Tax Consultant Office in Tangerang which is managed by tax consultant consultants who have certification as Tax Consultants and Legal Counsel at the Tax Court who have provided the best tax services to all clients.
-      </p>
       <div class="license-info animate">
-        <h4>
-          Tax Practice License Number
-        </h4>
-        <h5>
-          KIP-69/IP.B/PJ/2015
-        </h5>
-        <h3>
-          License Number
-        </h3>
-        <h5>
-          KEP-69/IP.B/PJ/2015
-        </h5>
-      </div>
-      <div class="d-flex justify-content-center mt-5">
-        <a href="https://wa.me/628158826288" class="btn btn-success me-3" target="_blank">
-          <i class="fab fa-whatsapp"></i> Contact Us on WhatsApp
-        </a>
-        <a href="https://wa.me/628158826288?text=I%20would%20like%20to%20schedule%20a%20consultation" class="btn btn-primary" target="_blank">
-          <i class="fab fa-whatsapp"></i> Schedule a Consultation
-        </a>
+        <h1 class="fw-bold text-dark mb-2">Yoyo Lukasa S.E., BKP</h1>
+        <p class="lead italic-text mb-5">
+          Tax Consultant Office in Tangerang which is managed by tax consultant consultants who have certification as Tax Consultants and Legal Counsel at the Tax Court who have provided the best tax services to all clients.
+        </p>
+        <div class="d-flex justify-content-center mt-5" style="padding-top: 30px;">
+          <a href="https://wa.me/628158826288?text=I%20would%20like%20to%20schedule%20a%20consultation" class="btn btn-dark-blue me-3" target="_blank">
+            <i class="fab fa-whatsapp"></i> Contact Us 
+          </a>
+        </div>
       </div>
     </div>
     <div class="carousel-container">
@@ -117,11 +102,12 @@ useHead({
 }
 
 .license-info {
-  background: rgba(255, 239, 204, 0.6); /* Semi-transparent background */
-  backdrop-filter: blur(1px); /* Blur effect */
-  padding: 10px;
+  background: rgba(117, 114, 108, 0.6);
+  backdrop-filter: blur(4px); /* Blur effect */
+  padding: 60px;
+  padding-bottom: 90px;
+  padding-top: 120px;
   border-radius: 15px; /* Curved edges for the container */
-  margin-top: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add some shadow for better contrast */
 }
 
@@ -163,4 +149,21 @@ useHead({
 .btn-primary:hover {
   background-color: #0056b3; /* Darker blue for hover effect */
 }
+
+.italic-text {
+  font-style: italic;
+  font-size: medium;
+}
+
+.btn-dark-blue {
+  background-color: #003366; /* Dark blue */
+  border-color: #003366; /* Dark blue */
+  color: #ffffff; /* White text */
+}
+
+.btn-dark-blue:hover {
+  background-color: #002244; /* Even darker blue for hover effect */
+  border-color: #002244; /* Matching border color */
+}
+
 </style>
