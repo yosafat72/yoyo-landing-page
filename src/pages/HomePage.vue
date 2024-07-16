@@ -58,7 +58,7 @@ useHead({
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgb(255, 255, 255), rgba(248, 193, 142, 0.5));
+  background: linear-gradient(to top, rgb(255, 255, 255), rgba(245, 227, 211, 0.5));
   backdrop-filter: blur(10px);
   z-index: 1;
 }
