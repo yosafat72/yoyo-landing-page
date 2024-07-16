@@ -31,7 +31,15 @@
 </template>
 
 <script setup lang="ts">
-// No script needed for this simple footer
+import { useHead } from '@vueuse/head';
+
+useHead({
+  title: 'YL Consultan - About Us, Contact, and Feedback',
+  meta: [
+    { name: 'description', content: 'Learn more about YL Consultan, including our mission, contact information, and how to provide feedback. Find out how to reach us and our role in the Financial Profession Development Center.' },
+    { name: 'keywords', content: 'YL Consultan, Financial Profession Development Center, tax consultants, contact information, feedback, suggestions, Tangerang' }
+  ]
+});
 </script>
 
 <style scoped>

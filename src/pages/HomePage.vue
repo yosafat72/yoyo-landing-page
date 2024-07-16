@@ -23,12 +23,22 @@
 </template>
 
 <script setup lang="ts">
+import { useHead } from '@vueuse/head';
 import NavbarComponent from '../components/NavbarComponent.vue';
 import ImageSliderComponent from '../components/ImageSliderComponent.vue';
 import AboutComponent from '../components/AboutComponent.vue';
 import ServiceComponent from '../components/ServiceComponent.vue';
 import FooterComponent from '../components/FooterComponent.vue';
+
+useHead({
+  title: 'KKP Yoyo Lukasa - Konsultan Pajak Profesional',
+  meta: [
+    { name: 'description', content: 'KKP Yoyo Lukasa menyediakan layanan konsultasi pajak profesional di Tangerang. Kami menawarkan solusi pajak yang tepat dan efisien.' },
+    { name: 'keywords', content: 'KKP Yoyo Lukasa, konsultan pajak Tangerang, layanan pajak, konsultasi pajak, perencanaan pajak' }
+  ]
+});
 </script>
+
 
 <style scoped>
 .home-background {

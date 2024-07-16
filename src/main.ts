@@ -1,15 +1,14 @@
 import { createApp } from 'vue'
+import { createHead } from '@vueuse/head'
 import './style.css'
 import App from './App.vue'
+import router from './routes/router'
 
-// Bootstrap
-import "bootstrap/dist/css/bootstrap.min.css"
-import "bootstrap"
-
-//Firebase
+// Firebase dan Bootstrap seperti sebelumnya
 import firebase from 'firebase/compat/app'
 import 'firebase/compat/analytics'
-import router from './routes/router'
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap"
 
 const firebaseConfig = {
   apiKey: "AIzaSyAYNSKCy--VoY4-9ABHd4vj0a2PEFILKCg",
@@ -21,10 +20,11 @@ const firebaseConfig = {
   measurementId: "G-3F84EGKLEQ"
 }
 
-//Initialize Firebase
 firebase.initializeApp(firebaseConfig)
 firebase.analytics()
 
 const app = createApp(App)
+const head = createHead()
 app.use(router)
+app.use(head)
 app.mount('#app')

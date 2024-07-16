@@ -30,6 +30,7 @@
 
 <script setup lang="ts">
 import { onMounted, onUnmounted } from 'vue';
+import { useHead } from '@vueuse/head';
 
 let lastScrollTop = 0;
 
@@ -54,6 +55,17 @@ onMounted(() => {
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll);
+});
+
+useHead({
+  title: 'YL Consultan - Tax Consulting Services',
+  meta: [
+    { name: 'description', content: 'YL Consultan offers professional tax consulting services. Explore our services, learn more about us, and get in touch with our team.' },
+    { name: 'keywords', content: 'YL Consultan, tax consulting, tax services, tax advisor, Jakarta, professional tax services' },
+    { property: 'og:title', content: 'YL Consultan - Tax Consulting Services' },
+    { property: 'og:description', content: 'YL Consultan provides expert tax consulting services. Discover our services, learn about our expertise, and contact us for professional advice.' },
+    { property: 'og:type', content: 'website' }
+  ]
 });
 </script>
 

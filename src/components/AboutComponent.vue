@@ -70,8 +70,16 @@
         </div>
       </div>
     </div>
-  </template>
+</template>
   
-  <script setup lang="ts">
-  </script>
-  
+<script setup lang="ts">
+  import { useHead } from '@vueuse/head';
+
+  useHead({
+    title: 'About Us - YL Consultan',
+    meta: [
+      { name: 'description', content: 'Learn about YL Consultan, a leading tax consulting firm in Tangerang. Discover our expertise, mission, and why clients choose us for their tax consulting needs.' },
+      { name: 'keywords', content: 'YL Consultan, tax consulting, Tangerang, tax professionals, financial consulting, about us' }
+    ]
+  });
+</script>
