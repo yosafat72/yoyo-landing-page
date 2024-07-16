@@ -7,8 +7,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('../pages/HomePage.vue'),
         meta: {
             title: 'Home - KKP Yoyo Lukasa',
-            description: 'Beranda Kantor Konsultan Pajak Yoyo Lukasa, penyedia layanan konsultasi pajak profesional di Tangerang.',
-            keywords: 'konsultan pajak, layanan pajak, konsultasi pajak Tangerang'
+            description: 'Beranda Kantor Konsultan Pajak Yoyo Lukasa, penyedia layanan konsultasi pajak profesional di Jakarta.',
+            keywords: 'konsultan pajak, layanan pajak, konsultasi pajak Jakarta'
         }
     },
     {
