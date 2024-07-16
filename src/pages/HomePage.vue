@@ -38,13 +38,35 @@ import FooterComponent from '../components/FooterComponent.vue';
 
 <style scoped>
 .home-background {
-  background-image: url('/mission.jpg');
+  position: relative;
+  background-image: url('/backgroundImage.jpg');
   background-size: cover;
-  background-position: center; 
+  background-position: center;
   background-repeat: no-repeat;
   padding: 20px;
   border-radius: 15px; 
+  overflow: hidden;
 }
+
+.home-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fef9f3;
+  opacity: 0.7; /* Sesuaikan opasitas sesuai kebutuhan */
+  backdrop-filter: blur(10px); /* Sesuaikan tingkat blur sesuai kebutuhan */
+  border-radius: 15px; /* Sesuaikan dengan elemen utama */
+  z-index: 1; /* Agar overlay berada di atas background image */
+}
+
+.home-background > * {
+  position: relative;
+  z-index: 2; /* Agar konten berada di atas overlay */
+}
+
 
 .bg-service-component {
   background-color: #fef9f3;

@@ -5,11 +5,25 @@
       <p class="lead">
         Is a Tax Consultant Office in Tangerang which is managed by tax consultant consultants who have certification as Tax Consultants and Legal Counsel at the Tax Court who have provided the best tax services to all clients.
       </p>
-      <div class="d-flex justify-content-center mt-5 mb-5">
-        <a href="https://wa.me/628128286167" class="btn btn-success me-3" target="_blank">
+      <div class="license-info animate">
+        <h4>
+          Tax Practice License Number
+        </h4>
+        <h5>
+          KIP-69/IP.B/PJ/2015
+        </h5>
+        <h3>
+          License Number
+        </h3>
+        <h5>
+          KEP-69/IP.B/PJ/2015
+        </h5>
+      </div>
+      <div class="d-flex justify-content-center mt-5">
+        <a href="https://wa.me/628158826288" class="btn btn-success me-3" target="_blank">
           <i class="fab fa-whatsapp"></i> Contact Us on WhatsApp
         </a>
-        <a href="https://wa.me/628128286167?text=I%20would%20like%20to%20schedule%20a%20consultation" class="btn btn-primary" target="_blank">
+        <a href="https://wa.me/628158826288?text=I%20would%20like%20to%20schedule%20a%20consultation" class="btn btn-primary" target="_blank">
           <i class="fab fa-whatsapp"></i> Schedule a Consultation
         </a>
       </div>
@@ -29,7 +43,7 @@
             <img src="/taxPrep.png" class="d-block w-100 rounded-img" height="350" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="/is_banner_03.jpg" class="d-block w-100 rounded-img" height="350" alt="...">
+            <img src="/is_banner_02.jpg" class="d-block w-100 rounded-img" height="350" alt="...">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -73,6 +87,30 @@
   height: auto; /* Maintain the aspect ratio of the image */
   object-fit: cover; /* Cover the container while maintaining aspect ratio */
   border-radius: 15px; /* Add curved edges to the images */
+}
+
+.license-info {
+  background: rgba(255, 239, 204, 0.6); /* Semi-transparent background */
+  backdrop-filter: blur(1px); /* Blur effect */
+  padding: 10px;
+  border-radius: 15px; /* Curved edges for the container */
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add some shadow for better contrast */
+}
+
+.animate {
+  animation: fadeInScaleUp 1s ease-in-out;
+}
+
+@keyframes fadeInScaleUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .btn {
