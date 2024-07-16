@@ -26,6 +26,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
+import { useHead } from '@vueuse/head';
 
 interface Service {
   image: string;
@@ -76,6 +77,19 @@ onMounted(() => {
   });
 
   elements.forEach((el) => observer.observe(el));
+});
+
+useHead({
+  title: 'YL Consultan - Tax Services',
+  meta: [
+    { name: 'description', content: 'Explore YL Consultan’s comprehensive tax solutions including tax planning, business tax services, individual tax services, audit support, and consulting.' },
+    { name: 'keywords', content: 'tax services, tax planning, business tax, individual tax, audit support, tax consulting, financial advisory' },
+    { property: 'og:title', content: 'YL Consultan - Tax Services' },
+    { property: 'og:description', content: 'Discover YL Consultan’s wide range of tax services tailored to meet your unique needs, from tax planning to audit support and financial consulting.' },
+    { property: 'og:image', content: '/img_tax_planning.jpg' },
+    { property: 'og:url', content: 'https://yourwebsite.com/services' },
+    { property: 'og:type', content: 'website' }
+  ]
 });
 </script>
 

@@ -58,6 +58,8 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
 
+import { useHead } from '@vueuse/head';
+
 onMounted(() => {
   const elements = document.querySelectorAll('.animate');
   const observer = new IntersectionObserver((entries) => {
@@ -73,6 +75,18 @@ onMounted(() => {
   });
 
   elements.forEach((el) => observer.observe(el));
+});
+
+useHead({
+  title: 'Yoyo Lukasa S.E., BKP - Tax Consultant in Tangerang',
+  meta: [
+    { name: 'description', content: 'Yoyo Lukasa S.E., BKP is a premier tax consultant office in Tangerang, managed by certified tax consultants and legal counselors providing top-notch tax services.' },
+    { name: 'keywords', content: 'Yoyo Lukasa, tax consultant, Tangerang, tax services, tax consultancy, legal counsel' },
+    { property: 'og:title', content: 'Yoyo Lukasa S.E., BKP - Tax Consultant in Tangerang' },
+    { property: 'og:description', content: 'Yoyo Lukasa S.E., BKP is a leading tax consultant office in Tangerang, offering expert tax consulting and legal counsel services.' },
+    { property: 'og:image', content: '/YoyoDirectur.png' },
+    { property: 'og:type', content: 'website' }
+  ]
 });
 </script>
 
