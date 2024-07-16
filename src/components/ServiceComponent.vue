@@ -1,24 +1,21 @@
 <template>
-  <div class="container d-flex align-items-center justify-content-center">
-    <div class="text-center">
+  <div class="container d-flex flex-column align-items-center justify-content-center mt-5">
+    <div class="text-center mb-5">
       <h3 class="fw-bold" style="color: black;">Comprehensive Tax Solutions</h3>
       <p class="lead">Tailored Expertise for Your Unique Needs</p>
     </div>
-  </div>
-  <div class="container">
-    <div class="row g-4">
-      <div v-for="service in services" :key="service.title" class="col-md-3">
-        <div class="card p-1" style="width: 16rem; min-width: 14rem; height: 100%;">
-          <img :src="service.image" class="card-img-top rounded" alt="..." style="height: 175px;">
-          <div class="card-body">
-            <div class="card-title">
-              <div class="fw-bold" style="font-size: 14px;">{{ service.title }}</div>
-            </div>
-            <div class="card-text fw-light" style="font-size: 12px;">
-              {{ service.description }}
-            </div>
-            <div class="card-text fw-light">
-              <router-link :to="service.link" class="text-decoration-none fw-medium" style="font-size: 14px; color: #E5E483;"><u>Learn More</u></router-link>
+    <div class="container">
+      <div class="row g-4 justify-content-center">
+        <div v-for="service in services" :key="service.title" class="col-md-3 animate">
+          <div class="card p-1" style="width: 16rem; min-width: 14rem; height: 100%;">
+            <img :src="service.image" class="card-img-top rounded" alt="..." style="height: 175px;">
+            <div class="card-body">
+              <div class="card-title">
+                <div class="fw-bold" style="font-size: 14px;">{{ service.title }}</div>
+              </div>
+              <div class="card-text fw-light" style="font-size: 12px;">
+                {{ service.description }}
+              </div>
             </div>
           </div>
         </div>
@@ -28,13 +25,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
 interface Service {
   image: string;
   title: string;
   description: string;
-  link: string;
 }
 
 const services = ref<Service[]>([
@@ -42,33 +38,45 @@ const services = ref<Service[]>([
     image: "/img_tax_planning.jpg",
     title: "Tax Planning and Compliance",
     description: "Comprehensive tax planning and compliance services tailored to meet your unique needs.",
-    link: "/tax-planning",
   },
   {
     image: "/img_business_tax.jpg",
     title: "Business Tax Services",
     description: "Specialized tax solutions for businesses of all sizes, aimed at minimizing tax liabilities and maximizing profitability.",
-    link: "/tax-planning",
   },
   {
     image: "/img_individual_tax.jpg",
     title: "Individual Tax Services",
     description: "Personalized tax consulting for individuals, ensuring accurate and timely tax filings.",
-    link: "/tax-planning",
   },
   {
     image: "/img_audit_support.jpg",
     title: "Audit Support",
     description: "Expert assistance in preparing for and navigating tax audits, reducing stress and potential liabilities.",
-    link: "/tax-planning",
   },
   {
     image: "/img_consulting.jpg",
     title: "Consulting and Advisory",
     description: "Strategic advice on tax implications of financial decisions, helping you make informed choices.",
-    link: "/tax-planning",
   },
 ]);
+
+onMounted(() => {
+  const elements = document.querySelectorAll('.animate');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fadeIn');
+      } else {
+        entry.target.classList.remove('fadeIn');
+      }
+    });
+  }, {
+    threshold: 0.1,
+  });
+
+  elements.forEach((el) => observer.observe(el));
+});
 </script>
 
 <style scoped>
@@ -136,5 +144,16 @@ const services = ref<Service[]>([
   .row-cols-md-2 {
     flex-direction: column;
   }
+}
+
+.animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.animate.fadeIn {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>

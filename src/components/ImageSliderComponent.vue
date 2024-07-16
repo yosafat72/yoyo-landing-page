@@ -33,7 +33,6 @@
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -41,9 +40,6 @@
           </div>
           <div class="carousel-item">
             <img src="/taxPrep.png" class="d-block w-100 rounded-img" height="350" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="/is_banner_02.jpg" class="d-block w-100 rounded-img" height="350" alt="...">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -60,7 +56,24 @@
 </template>
 
 <script setup lang="ts">
-// No script needed for this simple carousel
+import { onMounted } from 'vue';
+
+onMounted(() => {
+  const elements = document.querySelectorAll('.animate');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fadeIn');
+      } else {
+        entry.target.classList.remove('fadeIn');
+      }
+    });
+  }, {
+    threshold: 0.1,
+  });
+
+  elements.forEach((el) => observer.observe(el));
+});
 </script>
 
 <style scoped>
@@ -68,7 +81,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60%;
+  width: 100%;
   margin: auto;
   background-size: cover; /* Ensure the background image covers the area */
   background-position: center; /* Center the background image */
@@ -99,18 +112,14 @@
 }
 
 .animate {
-  animation: fadeInScaleUp 1s ease-in-out;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
 }
 
-@keyframes fadeInScaleUp {
-  0% {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+.animate.fadeIn {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .btn {
